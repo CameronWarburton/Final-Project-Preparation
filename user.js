@@ -6,7 +6,7 @@ async function onSearchChange(event) {
     renderPosts(id)
 }
 
-async function renderPosts(userId) {
+async function renderPosts(id) {
   const posts = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`);
   const postsData = await posts.json();
   postListEl.innerHTML = postsData.map(post => postHTML(post)).join('');
